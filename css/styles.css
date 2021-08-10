@@ -11,12 +11,6 @@ html {
   box-sizing: border-box;
 }
 
-/* *,
-*::before,
-*::after {
-  box-sizing: inherit;
-}*/
-
 body {
   font-family: Roboto, sans-serif;
   color: var(--primary-text-color);
@@ -50,6 +44,7 @@ body {
   text-decoration: none;
   padding-top: 32px;
   padding-bottom: 32px;
+  letter-spacing: 0.02em;
 
   position: relative;
   transition: ocolor 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,6 +77,7 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
   display: flex;
+
   transition: ocolor 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-list .link:hover,
@@ -187,6 +183,7 @@ a {
   font-size: 16px;
   letter-spacing: 0.06em;
   line-height: 1.88;
+
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-primary:hover,
@@ -227,6 +224,13 @@ p {
 .list + .list {
   margin-left: 30px;
 }
+.icons-quality {
+  display: flex;
+  justify-content: center;
+  padding: 25px 100px;
+  margin-bottom: 30px;
+  background-color: #f5f4fa;
+}
 
 /*Наши услуги*/
 
@@ -237,7 +241,6 @@ p {
   text-align: center;
   font-weight: 700;
   margin: 0 0 50px 0;
-  position: relative;
 }
 .list-works {
   display: flex;
@@ -245,13 +248,7 @@ p {
 .list-works .list {
   position: relative;
 }
-.icons-quality {
-  display: flex;
-  justify-content: center;
-  padding: 25px 100px;
-  margin-bottom: 30px;
-  background-color: #f5f4fa;
-}
+
 .work-box {
   display: flex;
   position: absolute;
@@ -476,6 +473,9 @@ p {
   opacity: 0;
   pointer-events: none;
 }
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
 .modal {
   position: absolute;
   top: 50%;
@@ -486,12 +486,11 @@ p {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.1);
-}
+
 .icon-box {
   position: absolute;
   display: flex;
@@ -507,12 +506,12 @@ p {
   align-items: center;
   cursor: pointer;
 }
-.icone-lose {
+.icon-сlose {
   position: absolute;
   width: 18px;
   height: 18px;
   top: 0;
-  color: var(--black-text-color);
+  fill: var(--black-text-color);
 }
 
 /*Портфолио работ*/
@@ -526,6 +525,7 @@ p {
   border-color: transparent;
   border-radius: 4px;
   font-weight: 500;
+
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -604,7 +604,7 @@ img {
   overflow: hidden;
 }
 .portfolio-item:hover .portfolio-overlay {
-  transform: translatey(0);
+  transform: translateY(0);
 }
 .portfolio-overlay {
   position: absolute;
@@ -614,7 +614,7 @@ img {
   height: 100%;
   background: rgba(33, 150, 243, 0.9);
 
-  transform: translatey(100%);
+  transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .text-overlay {
